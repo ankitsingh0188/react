@@ -15,7 +15,6 @@ export default class CustomPersonList extends React.Component {
   componentDidMount() {
     config.get('users')
       .then(res => {
-        console.log(res);
         const persons = res.data;
         this.setState({ persons });
       })

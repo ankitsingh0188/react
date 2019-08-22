@@ -7,7 +7,7 @@ import { Alert } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 // import Homepage from './components/Homepage';
-import CustomForm from './components/practice/form';
+import CustomForm from './components/practice/CustomForm';
 import CustomPersonList from './components/api/CustomPersonList';
 import CustomPost from './components/api/CustomPost';
 import CustomDelete from './components/api/CustomDelete';
@@ -16,7 +16,8 @@ import CustomLogout from './components/practice/CustomLogout';
 import CustomChildren from './components/practice/CustomChildren';
 import CustomThemedButton from './components/practice/CustomThemedButton';
 import ReactImdb from './components/practice/ReactImdb';
-import Header from './components/practice/header';
+import CountryState from './components/practice/CountryState';
+import CustomHeader from './components/practice/CustomHeader';
 import { isLoggedIn } from './utility';
 
 // const client = new ApolloClient({
@@ -66,7 +67,7 @@ class App extends React.Component {
           <div className="custom-img"></div>
           <div className="row">
             <Router>
-              <Header />
+              <CustomHeader />
               <Switch>
                 <PrivateRoute exact path="/emp" label="Emp" component={CustomPersonList} />
                 <PrivateRoute exact path="/update-emp" label="Emp" component={CustomPost} />
@@ -76,6 +77,7 @@ class App extends React.Component {
                 <Route exact path="/children" component={CustomChildren} />
                 <Route exact path="/context" component={CustomThemedButton} />
                 <Route exact path="/imdb" component={ReactImdb} />
+                <Route exact path="/try" component={CountryState} />
                 <Route exact path="/" render={(props) => (<CustomForm data={this.state.data1} updateParent={this.updateParent} />)} />
                 <Route exact component={NoRouteFound} />
               </Switch>

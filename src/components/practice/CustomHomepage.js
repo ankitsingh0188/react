@@ -24,7 +24,7 @@ const NODE_QUERY = gql`
       }
     }`;
 
-export default class Homepage extends Component {
+export default class CustomHomepage extends Component {
   render() {
     return (
       <>

@@ -104,16 +104,17 @@ class MovieCard extends React.Component {
         <div className="movie-info">
           <h2>Movie Details</h2>
           <div>
-            {<h1><a target='_blank' href={`https://www.imdb.com/title/${this.props.movieID}`}>{Title}</a></h1>}
+            <h1><a target='_blank' href={`https://www.imdb.com/title/${this.props.movieID}`}>{Title}</a></h1>
             <small>Released Date: {Released}</small>
           </div>
           <h4>Rating: {imdbRating} / 10</h4>
           <p>{Plot && Plot.substr(0, 350)}</p>
           <div className="tags-container">
-            {Genre &&
-              Genre.split(', ').map(g => (
+            {
+              Genre && Genre.split(', ').map(g => (
                 <span key={g}>{g}</span>
-              ))}
+              ))
+            }
           </div>
         </div>
       </div >

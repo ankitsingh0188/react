@@ -146,7 +146,7 @@ export default class CustomForm extends Component {
         </Form>
         <div className="col-md-6">
           {
-            this.state.message !== '' ? <div className="col-sm-12">{this.state.email}</div> : ' '
+            this.state.message !== '' ? <div className="col-sm-12">{this.state.email}</div> : null
           }
         </div>
       </>

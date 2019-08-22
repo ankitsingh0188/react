@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, Alert } from 'reactstrap';
 
 export function Test() {
   return (
@@ -35,6 +35,7 @@ export default class CustomForm extends Component {
       nameError: '',
       emailError: '',
       addressError: '',
+      user: '',
       // console.log('constructor');
       // this.customSubmit = this.customSubmit.bind(this);
     }
@@ -73,11 +74,11 @@ export default class CustomForm extends Component {
       console.log(this.state);
       // Clear form
       this.setState(initialState);
+      this.setState({
+        message: 'Hello'
+      })
     }
-    // this.setState({
-    //   message: 'Hello'
-    // })
-    // this.props.updateParent('Lorem');
+    this.props.updateParent('Lorem');
   }
 
   handleChange = (event) => {
@@ -138,14 +139,14 @@ export default class CustomForm extends Component {
             </div>
           </FormGroup>
           {/* <FormGroup>
-            <Label for="password">Password</Label>
-            <Input type="password" name="password" id="password" placeholder="enter your password" value={this.state.password} onChange={this.onPasswordChange} />
-          </FormGroup> */}
+          <Label for="password">Password</Label>
+          <Input type="password" name="password" id="password" placeholder="enter your password" value={this.state.password} onChange={this.onPasswordChange} />
+        </FormGroup> */}
           <Button color="info" onClick={this.handleSubmit}>Submit</Button>
         </Form>
         <div className="col-md-6">
           {
-            this.state.message !== '' ? <div className="col-sm-12">{this.state.email}</div> : ''
+            this.state.message !== '' ? <div className="col-sm-12">{this.state.email}</div> : ' '
           }
         </div>
       </>
